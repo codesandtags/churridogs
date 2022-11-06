@@ -1,20 +1,39 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
+import Head from "next/head";
+import Alert from "../components/alert/alert";
+import Layout, { siteTitle } from "../components/layout";
+import LeadCard from "../components/lead-card/lead-card";
+import PostsContainer from "../components/posts-container/posts-container";
+import utilStyles from "../styles/utils.module.css";
+import { getSortedPostsData } from "../lib/posts";
 
-export default function Home() {
-  return (
-    <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Welcome to <strong>ChurriDogs</strong>. The Ultimate site to look for jobs only created for dogs with awesome digital skills.</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-    </Layout>
-  )
+export async function getStaticProps() {
+   const allPostsData = getSortedPostsData();
+   return {
+      props: {
+         allPostsData,
+      },
+   };
+}
+
+export default function Home({ allPostsData }) {
+  let firstPost;
+  let otherPosts = [];
+
+  if (Array.isArray(allPostsData) && allPostsData.length > 0) {
+    firstPost = allPostsData[0];
+    otherPosts = allPostsData.slice(1);
+  }
+
+   return (
+      <Layout home>
+         <Head>
+            <title>{siteTitle}</title>
+         </Head>
+
+         <section className={utilStyles.headingMd}>
+            <LeadCard post={firstPost}></LeadCard>
+            <PostsContainer posts={otherPosts}></PostsContainer>
+         </section>
+      </Layout>
+   );
 }
