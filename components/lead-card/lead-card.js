@@ -2,7 +2,6 @@ import PostsContainer from "../posts-container/posts-container";
 import Link from "next/link";
 
 export default function LeadCard({ post }) {
-   console.log(post);
    return (
       <div className="flex h-full bg-white rounded overflow-hidden shadow-lg">
          <Link

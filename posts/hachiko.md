@@ -8,4 +8,5 @@ excerpt: 'Some of the best movies are inspired by real events, and dog movies ar
 
 Some of the best movies are inspired by real events, and dog movies are no exception. Just like Marley & Me, Hachi: A Dog's Tale also draws inspiration from real life. It tells the story of Hachi, a dog that's so loyal to its owner he keeps on waiting for him years after his owner has died.
 
+
 The movie is touching and has the power to make the audience cry. It manages to create a strong bond between a human and his dog, or, in this case, the other way around as well. Richard Gere gives a strong performance, but the real hero of the movie is the dog Hachi.

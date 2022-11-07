@@ -29,22 +29,14 @@ export default function Header({ children, home, name }) {
                </div>
             </>
          ) : (
-            <>
-               <Link href="/">
-                  <Image
-                     priority
-                     src="/images/dog-profile-2.webp" // Route of the image file
-                     className={utilStyles.borderCircle}
-                     height={108}
-                     width={108}
-                     alt=""
-                  />
-               </Link>
-               <h2 className={utilStyles.headingLg}>
-                  <Link href="/" className={utilStyles.colorInherit}>
-                     {name}
-                  </Link>
-               </h2>
+            <> 
+            <nav className="w-full bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900">
+                <div className="container flex flex-wrap justify-between items-center mx-auto">
+                    <Link href="/" className="flex items-center no-underline hover:no-underline">
+                        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">🐶 {name}</span>
+                    </Link>
+                </div>
+            </nav>
             </>
          )}
       </header>
