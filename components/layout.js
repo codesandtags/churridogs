@@ -11,40 +11,31 @@ export const siteTitle = "Welcome to ChurriDogs";
 
 export default function Layout({ children, home }) {
    return (
-    <div className='bg-gray-200 font-sans leading-normal'>
-      <Header home={home} name={name}/>  
-      <div className={cn(styles.container)}>
-         <Head>
-            <link rel="icon" href="/favicon.ico" />
-            <meta
-               name="description"
-               content="Learn how to build a personal website using Next.js"
-            />
-            <meta
-               property="og:image"
-               content={`https://og-image.vercel.app/${encodeURI(
-                  siteTitle
-               )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-            />
-            <meta name="og:title" content={siteTitle} />
-            <meta name="twitter:card" content="summary_large_image" />
-         </Head>
-         <main>{children}</main>
-         {!home && (
-            <div className={styles.backToHome}>
-               <Link href="/">← Back to home</Link>
-            </div>
-         )}
-         <footer>
-            <a
-               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-               target="_blank"
-               rel="noopener noreferrer"
-            >
-               Patrocinado por 🐈‍⬛ NalaScript
-            </a>
-         </footer>
+      <div className="bg-gray-200 font-sans leading-normal">
+         <Header home={home} name={name} />
+         <div className={cn(styles.container)}>
+            <Head>
+               <link rel="icon" href="/favicon.ico" />
+               <meta
+                  name="description"
+                  content="Learn how to build a personal website using Next.js"
+               />
+               <meta
+                  property="og:image"
+                  content={`https://og-image.vercel.app/${encodeURI(
+                     siteTitle
+                  )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+               />
+               <meta name="og:title" content={siteTitle} />
+               <meta name="twitter:card" content="summary_large_image" />
+            </Head>
+            <main>{children}</main>
+            {!home && (
+               <div className="w-full p-2 flex flex-col flex-grow flex-shrink">
+                  <Link href="/">← Back to home</Link>
+               </div>
+            )}
+         </div>
       </div>
-    </div>
    );
 }
